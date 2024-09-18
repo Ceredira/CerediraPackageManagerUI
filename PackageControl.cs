@@ -8,11 +8,12 @@ namespace CerediraPackageManagerUI
         public PackageControl(PackageInfo packageInfo)
         {
             InitializeComponent();
-            packageName.Text = packageInfo.Name + " " + packageInfo.Version;
+            packageChangelog.Text = packageInfo.Changelog;
+            packageName.Text = packageInfo.Name + " " + packageInfo.PackageVersion;
             // packageName.LinkClicked += PackageName_LinkClicked;
             packageDescription.Text = packageInfo.Description;
+            packageAuthor.Text = packageInfo.PackageAuthor;
             packageWebsite.Text = packageInfo.Website;
-            packageAuthor.Text = packageInfo.Author;
 
             if (packageInfo.Installed == true)
             {

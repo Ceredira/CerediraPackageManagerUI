@@ -113,40 +113,39 @@
             // 
             // packageAuthor
             // 
-            this.packageAuthor.AutoSize = true;
             this.packageAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.packageAuthor.Location = new System.Drawing.Point(91, 59);
             this.packageAuthor.Name = "packageAuthor";
-            this.packageAuthor.Size = new System.Drawing.Size(99, 16);
+            this.packageAuthor.Size = new System.Drawing.Size(393, 19);
             this.packageAuthor.TabIndex = 7;
             this.packageAuthor.Text = "packageAuthor";
             // 
             // packageWebsite
             // 
-            this.packageWebsite.AutoSize = true;
             this.packageWebsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.packageWebsite.Location = new System.Drawing.Point(91, 39);
             this.packageWebsite.Name = "packageWebsite";
-            this.packageWebsite.Size = new System.Drawing.Size(108, 16);
+            this.packageWebsite.Size = new System.Drawing.Size(393, 20);
             this.packageWebsite.TabIndex = 6;
             this.packageWebsite.TabStop = true;
             this.packageWebsite.Text = "packageSiteLink";
             // 
             // packageName
             // 
-            this.packageName.AutoSize = true;
             this.packageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.packageName.Location = new System.Drawing.Point(90, 15);
             this.packageName.Name = "packageName";
-            this.packageName.Size = new System.Drawing.Size(257, 20);
+            this.packageName.Size = new System.Drawing.Size(394, 20);
             this.packageName.TabIndex = 5;
             this.packageName.Text = "packageName packageVersion";
             // 
             // packageIcon
             // 
+            this.packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.box_package_icon;
             this.packageIcon.Location = new System.Drawing.Point(15, 15);
             this.packageIcon.Name = "packageIcon";
             this.packageIcon.Size = new System.Drawing.Size(60, 60);
+            this.packageIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.packageIcon.TabIndex = 4;
             this.packageIcon.TabStop = false;
             // 
@@ -176,11 +175,10 @@
             // 
             // packageDescription
             // 
-            this.packageDescription.AutoSize = true;
             this.packageDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.packageDescription.Location = new System.Drawing.Point(3, 3);
             this.packageDescription.Name = "packageDescription";
-            this.packageDescription.Size = new System.Drawing.Size(129, 16);
+            this.packageDescription.Size = new System.Drawing.Size(486, 261);
             this.packageDescription.TabIndex = 0;
             this.packageDescription.Text = "packageDescription";
             // 
@@ -197,11 +195,10 @@
             // 
             // packageChangelog
             // 
-            this.packageChangelog.AutoSize = true;
             this.packageChangelog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.packageChangelog.Location = new System.Drawing.Point(3, 3);
             this.packageChangelog.Name = "packageChangelog";
-            this.packageChangelog.Size = new System.Drawing.Size(131, 16);
+            this.packageChangelog.Size = new System.Drawing.Size(486, 261);
             this.packageChangelog.TabIndex = 0;
             this.packageChangelog.Text = "packageChangeLog";
             // 
@@ -222,16 +219,13 @@
             this.Name = "PackageControl";
             this.Size = new System.Drawing.Size(500, 500);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.packageIcon)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.packageDescriptionTab.ResumeLayout(false);
-            this.packageDescriptionTab.PerformLayout();
             this.packageChangelogTab.ResumeLayout(false);
-            this.packageChangelogTab.PerformLayout();
             this.ResumeLayout(false);
 
         }

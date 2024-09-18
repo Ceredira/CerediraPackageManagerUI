@@ -14,7 +14,7 @@ namespace CerediraPackageManagerUI
             InitializeComponent();
             this.mainForm = form1;
             this.packageInfo = packageInfo;
-            packageName.Text = packageInfo.Name + " " + packageInfo.Version;
+            packageName.Text = packageInfo.Name + " " + packageInfo.PackageVersion;
             packageDescription.Text = packageInfo.Description;
         }
 
