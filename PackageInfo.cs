@@ -8,6 +8,8 @@
         public string DownloadPath { get; set; }
         public string OriginalPackageName { get; set; }
         public string PackageAuthor { get; set; }
+        public string PackageFiles { get; set; }
+        public string PackageSourceSize { get; set; }
         public string PackageVersion { get; set; }
         public string Website { get; set; }
         public bool Installed { get; set; }

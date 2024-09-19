@@ -27,5 +27,20 @@ namespace CerediraPackageManagerUI
         {
 
         }
+
+        private void packageDescription_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowPackage(this.packageInfo);
+        }
+
+        private void packageIcon_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowPackage(this.packageInfo);
+        }
+
+        private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        {
+            this.mainForm.ShowPackage(this.packageInfo);
+        }
     }
 }

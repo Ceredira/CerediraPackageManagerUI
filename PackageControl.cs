@@ -1,13 +1,16 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace CerediraPackageManagerUI
 {
     public partial class PackageControl : UserControl
     {
-        public PackageControl(PackageInfo packageInfo)
+        public PackageControl()
         {
             InitializeComponent();
+        }
+
+        public void ShowPackageInfo(PackageInfo packageInfo)
+        {
             packageChangelog.Text = packageInfo.Changelog;
             packageName.Text = packageInfo.Name + " " + packageInfo.PackageVersion;
             // packageName.LinkClicked += PackageName_LinkClicked;
@@ -25,16 +28,17 @@ namespace CerediraPackageManagerUI
                 installPackage.Enabled = true;
                 deletePackage.Enabled = false;
             }
-        }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
+            infoPackageName.Text = packageInfo.Name;
+            infoPackageVersion.Text = packageInfo.PackageVersion;
+            infoPackageAuthor.Text = packageInfo.PackageAuthor;
+            infoWebsite.Text = packageInfo.Website;
+            infoDownloadPath.Text = packageInfo.DownloadPath;
+            infoOriginalPackageName.Text = packageInfo.OriginalPackageName;
+            infoPackageSourceSize.Text = packageInfo.PackageSourceSize;
+            infoPackageSize.Text = "";
 
-        }
-
-        private void installPackage_Click(object sender, EventArgs e)
-        {
-
+            packageFiles.Text = packageInfo.PackageFiles;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CerediraPackageManagerUI
@@ -8,28 +9,40 @@ namespace CerediraPackageManagerUI
         public Form1()
         {
             InitializeComponent();
+            rootPath.Text = Directory.GetCurrentDirectory();
+
+            ScanLocalPackages();
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            List<PackageInfo> packages = LocalPackageManager.GetPackages();
-
-            foreach (var item in packages)
-            {
-                PackageShortControl psc = new PackageShortControl(this, item);
-                psc.Dock = DockStyle.Fill;
-                packageList.Controls.Add(psc);
-            }
+            
         }
 
         public void ShowPackage(PackageInfo packageInfo)
         {
-            PackageControl pc = new PackageControl(packageInfo)
+            packageControl.ShowPackageInfo(packageInfo);
+        }
+
+        public void ScanLocalPackages()
+        {
+            List<PackageInfo> packages = LocalPackageManager.GetPackages();
+
+            installedPackageList.Controls.Clear();
+
+            foreach (var item in packages)
             {
-                Dock = DockStyle.Fill
-            };
-            splitContainer1.Panel2.Controls.Clear();
-            splitContainer1.Panel2.Controls.Add(pc);
+                PackageShortControl psc = new PackageShortControl(this, item)
+                {
+                    Dock = DockStyle.Fill
+                };
+                installedPackageList.Controls.Add(psc);
+            }
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            ScanLocalPackages();
         }
     }
 }
