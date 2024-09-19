@@ -6,12 +6,16 @@ namespace CerediraPackageManagerUI
 {
     public partial class Form1 : Form
     {
+
+        List<PackageInfo> packages;
+
         public Form1()
         {
             InitializeComponent();
             rootPath.Text = Directory.GetCurrentDirectory();
 
             ScanLocalPackages();
+            ShowPackage(packages[0]);
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
@@ -26,11 +30,11 @@ namespace CerediraPackageManagerUI
 
         public void ScanLocalPackages()
         {
-            List<PackageInfo> packages = LocalPackageManager.GetPackages();
+            this.packages = LocalPackageManager.GetPackages();
 
             installedPackageList.Controls.Clear();
 
-            foreach (var item in packages)
+            foreach (var item in this.packages)
             {
                 PackageShortControl psc = new PackageShortControl(this, item)
                 {
@@ -43,6 +47,17 @@ namespace CerediraPackageManagerUI
         private void button1_Click(object sender, System.EventArgs e)
         {
             ScanLocalPackages();
+        }
+
+        private async void button2_Click(object sender, System.EventArgs e)
+        {
+            string repoInfo = await Downloader.GetPageContentAsync(remoteRepositoryUrl.Text + "/info.txt");
+
+            foreach (var item in repoInfo.Split('\n')) {
+                string packageUrl = remoteRepositoryUrl.Text + $"/{item.Replace("\r", "")}/{item.Replace('/', '-').Replace("\r", "")}.cpmd";
+                string remotePackageInfo = await Downloader.GetPageContentAsync(packageUrl);
+                richTextBox1.Text = remotePackageInfo;
+            }
         }
     }
 }

@@ -45,6 +45,7 @@ namespace CerediraPackageManagerUI
                         DownloadPath = File.ReadAllText(Path.Combine(dir, "downloadPath.txt")),
                         OriginalPackageName = File.ReadAllText(Path.Combine(dir, "originalPackageName.txt")),
                         PackageAuthor = File.ReadAllText(Path.Combine(dir, "packageAuthor.txt")),
+                        PackageDirs = File.ReadAllText(Path.Combine(dir, "_packageDirs.txt")),
                         PackageFiles = File.ReadAllText(Path.Combine(dir, "_packageFiles.txt")),
                         PackageSourceSize = File.ReadAllText(Path.Combine(dir, "_packageSourceSize.txt")),
                         PackageVersion = File.ReadAllText(Path.Combine(dir, "_packageVersion.txt")),

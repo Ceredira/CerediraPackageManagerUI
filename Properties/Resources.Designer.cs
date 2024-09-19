@@ -69,5 +69,15 @@ namespace CerediraPackageManagerUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_package_delivered_icon {
+            get {
+                object obj = ResourceManager.GetObject("product_package_delivered_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

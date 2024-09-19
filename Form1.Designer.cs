@@ -29,31 +29,27 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.installedPackageList = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.remoteRepositoryUrl = new System.Windows.Forms.TextBox();
+            this.remoteRepositoryUrlLabel = new System.Windows.Forms.Label();
+            this.updateRemotePackages = new System.Windows.Forms.Button();
+            this.availablePackageList = new System.Windows.Forms.FlowLayoutPanel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.packageControl = new CerediraPackageManagerUI.PackageControl();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.rootPath = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.availablePackageList = new System.Windows.Forms.FlowLayoutPanel();
-            this.packageControl = new CerediraPackageManagerUI.PackageControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -62,6 +58,12 @@
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.availablePackageList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -85,6 +87,28 @@
             this.splitContainer1.SplitterDistance = 542;
             this.splitContainer1.TabIndex = 0;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(540, 460);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.installedPackageList);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(532, 434);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Установленные";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // installedPackageList
             // 
             this.installedPackageList.AutoScroll = true;
@@ -93,6 +117,110 @@
             this.installedPackageList.Name = "installedPackageList";
             this.installedPackageList.Size = new System.Drawing.Size(526, 428);
             this.installedPackageList.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.splitContainer3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(532, 434);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Доступные";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.tableLayoutPanel2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.availablePackageList);
+            this.splitContainer3.Size = new System.Drawing.Size(526, 428);
+            this.splitContainer3.SplitterDistance = 45;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Controls.Add(this.remoteRepositoryUrl, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.remoteRepositoryUrlLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.updateRemotePackages, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 45);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // remoteRepositoryUrl
+            // 
+            this.remoteRepositoryUrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remoteRepositoryUrl.Location = new System.Drawing.Point(3, 22);
+            this.remoteRepositoryUrl.Name = "remoteRepositoryUrl";
+            this.remoteRepositoryUrl.Size = new System.Drawing.Size(388, 20);
+            this.remoteRepositoryUrl.TabIndex = 0;
+            this.remoteRepositoryUrl.Text = "https://localhost:11443";
+            // 
+            // remoteRepositoryUrlLabel
+            // 
+            this.remoteRepositoryUrlLabel.AutoSize = true;
+            this.remoteRepositoryUrlLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remoteRepositoryUrlLabel.Location = new System.Drawing.Point(3, 3);
+            this.remoteRepositoryUrlLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.remoteRepositoryUrlLabel.Name = "remoteRepositoryUrlLabel";
+            this.remoteRepositoryUrlLabel.Size = new System.Drawing.Size(388, 16);
+            this.remoteRepositoryUrlLabel.TabIndex = 1;
+            this.remoteRepositoryUrlLabel.Text = "Адрес репозитория:";
+            // 
+            // updateRemotePackages
+            // 
+            this.updateRemotePackages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.updateRemotePackages.Location = new System.Drawing.Point(404, 10);
+            this.updateRemotePackages.Margin = new System.Windows.Forms.Padding(10);
+            this.updateRemotePackages.Name = "updateRemotePackages";
+            this.tableLayoutPanel2.SetRowSpan(this.updateRemotePackages, 2);
+            this.updateRemotePackages.Size = new System.Drawing.Size(112, 25);
+            this.updateRemotePackages.TabIndex = 2;
+            this.updateRemotePackages.Text = "Обновить";
+            this.updateRemotePackages.UseVisualStyleBackColor = true;
+            this.updateRemotePackages.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // availablePackageList
+            // 
+            this.availablePackageList.Controls.Add(this.richTextBox1);
+            this.availablePackageList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.availablePackageList.Location = new System.Drawing.Point(0, 0);
+            this.availablePackageList.Name = "availablePackageList";
+            this.availablePackageList.Size = new System.Drawing.Size(526, 379);
+            this.availablePackageList.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(294, 249);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // packageControl
+            // 
+            this.packageControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packageControl.Location = new System.Drawing.Point(0, 0);
+            this.packageControl.Name = "packageControl";
+            this.packageControl.Size = new System.Drawing.Size(536, 460);
+            this.packageControl.TabIndex = 0;
             // 
             // splitContainer2
             // 
@@ -163,122 +291,6 @@
             this.rootPath.Size = new System.Drawing.Size(738, 20);
             this.rootPath.TabIndex = 2;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(540, 460);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.installedPackageList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(532, 434);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Установленные";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.splitContainer3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(532, 434);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Доступные";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.tableLayoutPanel2);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.availablePackageList);
-            this.splitContainer3.Size = new System.Drawing.Size(526, 428);
-            this.splitContainer3.SplitterDistance = 45;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 45);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(388, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "https://github.com/Ceredira/CerediraPackageManager/releases";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(388, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Адрес репозитория:";
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(404, 10);
-            this.button2.Margin = new System.Windows.Forms.Padding(10);
-            this.button2.Name = "button2";
-            this.tableLayoutPanel2.SetRowSpan(this.button2, 2);
-            this.button2.Size = new System.Drawing.Size(112, 25);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Обновить";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // availablePackageList
-            // 
-            this.availablePackageList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.availablePackageList.Location = new System.Drawing.Point(0, 0);
-            this.availablePackageList.Name = "availablePackageList";
-            this.availablePackageList.Size = new System.Drawing.Size(526, 379);
-            this.availablePackageList.TabIndex = 0;
-            // 
-            // packageControl
-            // 
-            this.packageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.packageControl.Location = new System.Drawing.Point(0, 0);
-            this.packageControl.Name = "packageControl";
-            this.packageControl.Size = new System.Drawing.Size(536, 460);
-            this.packageControl.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,12 +305,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -308,6 +314,13 @@
             this.splitContainer3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.availablePackageList.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -326,11 +339,12 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox remoteRepositoryUrl;
+        private System.Windows.Forms.Label remoteRepositoryUrlLabel;
+        private System.Windows.Forms.Button updateRemotePackages;
         private System.Windows.Forms.FlowLayoutPanel availablePackageList;
         private PackageControl packageControl;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

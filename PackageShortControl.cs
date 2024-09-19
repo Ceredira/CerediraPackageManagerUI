@@ -16,6 +16,15 @@ namespace CerediraPackageManagerUI
             this.packageInfo = packageInfo;
             packageName.Text = packageInfo.Name + " " + packageInfo.PackageVersion;
             packageDescription.Text = packageInfo.Description;
+
+            if (packageInfo.Installed == true)
+            {
+                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.product_package_delivered_icon;
+            }
+            else
+            {
+                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.box_package_icon;
+            }
         }
 
         private void packageName_Click(object sender, EventArgs e)
