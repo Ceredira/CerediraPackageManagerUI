@@ -6,16 +6,31 @@ namespace CerediraPackageManagerUI
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Список установленных пакетов
+        /// </summary>
+        List<PackageInfo> localPackages;
 
-        List<PackageInfo> packages;
+        /// <summary>
+        /// Список доступных пакетов
+        /// </summary>
+        List<PackageInfo> remotePackages;
 
+        /// <summary>
+        /// Инициализация главной формы
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
+
+            // Вывести текущий каталог в поле Каталог установки
             rootPath.Text = Directory.GetCurrentDirectory();
 
+            // Проверить наличие установленных пакетов
             ScanLocalPackages();
-            ShowPackage(packages[0]);
+
+            // Отобразить подробную инфомарцию по первому доступному пакету
+            ShowPackage(localPackages[0]);
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
@@ -23,41 +38,65 @@ namespace CerediraPackageManagerUI
             
         }
 
+        /// <summary>
+        /// Метод для отрисовки на форме информации по выбранному пакету
+        /// </summary>
+        /// <param name="packageInfo">Пакет</param>
         public void ShowPackage(PackageInfo packageInfo)
         {
-            packageControl.ShowPackageInfo(packageInfo);
+            packageControl.ShowPackageInfo(this, packageInfo);
         }
 
+        /// <summary>
+        /// Метод для загрузки установленных пакетов
+        /// </summary>
         public void ScanLocalPackages()
         {
-            this.packages = LocalPackageManager.GetPackages();
+            this.localPackages = LocalPackageManager.GetPackages();
 
             installedPackageList.Controls.Clear();
 
-            foreach (var item in this.packages)
+            foreach (var item in this.localPackages)
             {
-                PackageShortControl psc = new PackageShortControl(this, item)
-                {
-                    Dock = DockStyle.Fill
-                };
+                PackageShortControl psc = new PackageShortControl(this, item);
                 installedPackageList.Controls.Add(psc);
             }
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Метод для загрузки доступных пакетов
+        /// </summary>
+        public async void ScanRemotePackages()
+        {
+            this.remotePackages = await RemotePackageManager.GetPackages(remoteRepositoryUrl.Text);
+
+            availablePackageList.Controls.Clear();
+
+            foreach (var item in this.remotePackages)
+            {
+                PackageShortControl psc = new PackageShortControl(this, item);
+                availablePackageList.Controls.Add(psc);
+            }
+        }
+
+        /// <summary>
+        /// Нажатие на кнопку Обновить на главной форме
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void updateLocalPackages_Click(object sender, System.EventArgs e)
         {
             ScanLocalPackages();
         }
 
-        private async void button2_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Нажатие на кнопку Обновить во вкладке Доступные
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void updateRemotePackages_Click(object sender, System.EventArgs e)
         {
-            string repoInfo = await Downloader.GetPageContentAsync(remoteRepositoryUrl.Text + "/info.txt");
-
-            foreach (var item in repoInfo.Split('\n')) {
-                string packageUrl = remoteRepositoryUrl.Text + $"/{item.Replace("\r", "")}/{item.Replace('/', '-').Replace("\r", "")}.cpmd";
-                string remotePackageInfo = await Downloader.GetPageContentAsync(packageUrl);
-                richTextBox1.Text = remotePackageInfo;
-            }
+            ScanRemotePackages();
         }
     }
 }

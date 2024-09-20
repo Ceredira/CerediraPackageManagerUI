@@ -4,22 +4,27 @@ using System.Windows.Forms;
 
 namespace CerediraPackageManagerUI
 {
+    /// <summary>
+    /// Пользовательский компонент Карточка пакета
+    /// </summary>
     public partial class PackageControl : UserControl
     {
-        PackageInfo packageInfo;
+        private PackageInfo packageInfo;
+
+        private Form1 mainForm;
 
         public PackageControl()
         {
             InitializeComponent();
         }
 
-        public void ShowPackageInfo(PackageInfo packageInfo)
+        public void ShowPackageInfo(Form1 form1, PackageInfo packageInfo)
         {
+            this.mainForm = form1;
             this.packageInfo = packageInfo;
 
             packageChangelog.Text = packageInfo.Changelog;
             packageName.Text = packageInfo.Name + " " + packageInfo.PackageVersion;
-            // packageName.LinkClicked += PackageName_LinkClicked;
             packageDescription.Text = packageInfo.Description;
             packageAuthor.Text = packageInfo.PackageAuthor;
             packageWebsite.Text = packageInfo.Website;

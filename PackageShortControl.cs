@@ -3,17 +3,28 @@ using System.Windows.Forms;
 
 namespace CerediraPackageManagerUI
 {
+    /// <summary>
+    /// Пользовательский компонент Краткая карточка пакета
+    /// </summary>
     public partial class PackageShortControl : UserControl
     {
-        private readonly PackageInfo packageInfo;
+        private PackageInfo packageInfo;
 
-        private readonly Form1 mainForm;
+        private Form1 mainForm;
+
+        public PackageShortControl()
+        {
+            InitializeComponent();
+            this.Dock = DockStyle.Fill;
+        }
 
         public PackageShortControl(Form1 form1, PackageInfo packageInfo)
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             this.mainForm = form1;
             this.packageInfo = packageInfo;
+
             packageName.Text = packageInfo.Name + " " + packageInfo.PackageVersion;
             packageDescription.Text = packageInfo.Description;
 

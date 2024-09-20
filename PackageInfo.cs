@@ -1,5 +1,8 @@
 ﻿namespace CerediraPackageManagerUI
 {
+    /// <summary>
+    /// Модель пакета
+    /// </summary>
     public partial class PackageInfo
     {
         public string Name { get; set; }

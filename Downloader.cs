@@ -5,8 +5,19 @@ using System.Threading.Tasks;
 
 namespace CerediraPackageManagerUI
 {
+    /// <summary>
+    /// Класс для методов работы с сетью интернет. Размещаемые методы должны быть async,
+    /// так как вызываются из UI потока и нельзя блокировать основной поток, или UI будет зависать.
+    /// </summary>
     internal class Downloader
     {
+        /// <summary>
+        /// Метод для скачивания файла по ссылке
+        /// </summary>
+        /// <param name="url">URL ссылка скачиваемого файла</param>
+        /// <param name="filePath">Путь в файловой системе, для сохранения скачанного файла</param>
+        /// <returns>Возвращает асинхронную задачу, без данных</returns>
+        /// <exception cref="Exception">Ошибки скачивания</exception>
         public static async Task DownloadFileAsync(string url, string filePath)
         {
             try
@@ -42,6 +53,12 @@ namespace CerediraPackageManagerUI
             }
         }
 
+        /// <summary>
+        /// Метод для скачивания содержимого по ссылке
+        /// </summary>
+        /// <param name="url">URL ссылка скачиваемых данных</param>
+        /// <returns>Асинхронная задача, возвращающая содержимое скачанное по ссылке</returns>
+        /// <exception cref="Exception">Ошибки скачивания</exception>
         public static async Task<string> GetPageContentAsync(string url)
         {
             try
