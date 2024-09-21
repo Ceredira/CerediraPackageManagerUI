@@ -98,5 +98,18 @@ namespace CerediraPackageManagerUI
         {
             ScanRemotePackages();
         }
+
+        private void выходToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            using (AboutBox1 box = new AboutBox1())
+            {
+                box.ShowDialog(this);
+            }
+        }
     }
 }
