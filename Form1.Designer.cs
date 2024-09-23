@@ -32,7 +32,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.installedPackageList = new System.Windows.Forms.FlowLayoutPanel();
-            this.packageShortControl1 = new CerediraPackageManagerUI.PackageShortControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,7 +39,6 @@
             this.remoteRepositoryUrlLabel = new System.Windows.Forms.Label();
             this.updateRemotePackages = new System.Windows.Forms.Button();
             this.availablePackageList = new System.Windows.Forms.FlowLayoutPanel();
-            this.packageControl = new CerediraPackageManagerUI.PackageControl();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.updateLocalPackages = new System.Windows.Forms.Button();
@@ -51,6 +49,8 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.packageShortControl1 = new CerediraPackageManagerUI.PackageShortControl();
+            this.packageControl = new CerediraPackageManagerUI.PackageControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -125,22 +125,13 @@
             this.installedPackageList.Size = new System.Drawing.Size(526, 404);
             this.installedPackageList.TabIndex = 0;
             // 
-            // packageShortControl1
-            // 
-            this.packageShortControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.packageShortControl1.Location = new System.Drawing.Point(3, 3);
-            this.packageShortControl1.MinimumSize = new System.Drawing.Size(500, 100);
-            this.packageShortControl1.Name = "packageShortControl1";
-            this.packageShortControl1.Size = new System.Drawing.Size(500, 100);
-            this.packageShortControl1.TabIndex = 0;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(532, 434);
+            this.tabPage2.Size = new System.Drawing.Size(532, 410);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Доступные";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -159,8 +150,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.availablePackageList);
-            this.splitContainer3.Size = new System.Drawing.Size(526, 428);
-            this.splitContainer3.SplitterDistance = 45;
+            this.splitContainer3.Size = new System.Drawing.Size(526, 404);
+            this.splitContainer3.SplitterDistance = 42;
             this.splitContainer3.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -177,13 +168,13 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 45);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(526, 42);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // remoteRepositoryUrl
             // 
             this.remoteRepositoryUrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.remoteRepositoryUrl.Location = new System.Drawing.Point(3, 22);
+            this.remoteRepositoryUrl.Location = new System.Drawing.Point(3, 20);
             this.remoteRepositoryUrl.Name = "remoteRepositoryUrl";
             this.remoteRepositoryUrl.Size = new System.Drawing.Size(388, 20);
             this.remoteRepositoryUrl.TabIndex = 0;
@@ -196,7 +187,7 @@
             this.remoteRepositoryUrlLabel.Location = new System.Drawing.Point(3, 3);
             this.remoteRepositoryUrlLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.remoteRepositoryUrlLabel.Name = "remoteRepositoryUrlLabel";
-            this.remoteRepositoryUrlLabel.Size = new System.Drawing.Size(388, 16);
+            this.remoteRepositoryUrlLabel.Size = new System.Drawing.Size(388, 14);
             this.remoteRepositoryUrlLabel.TabIndex = 1;
             this.remoteRepositoryUrlLabel.Text = "Адрес репозитория:";
             // 
@@ -207,7 +198,7 @@
             this.updateRemotePackages.Margin = new System.Windows.Forms.Padding(10);
             this.updateRemotePackages.Name = "updateRemotePackages";
             this.tableLayoutPanel2.SetRowSpan(this.updateRemotePackages, 2);
-            this.updateRemotePackages.Size = new System.Drawing.Size(112, 25);
+            this.updateRemotePackages.Size = new System.Drawing.Size(112, 22);
             this.updateRemotePackages.TabIndex = 2;
             this.updateRemotePackages.Text = "Обновить";
             this.updateRemotePackages.UseVisualStyleBackColor = true;
@@ -218,16 +209,8 @@
             this.availablePackageList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.availablePackageList.Location = new System.Drawing.Point(0, 0);
             this.availablePackageList.Name = "availablePackageList";
-            this.availablePackageList.Size = new System.Drawing.Size(526, 379);
+            this.availablePackageList.Size = new System.Drawing.Size(526, 358);
             this.availablePackageList.TabIndex = 0;
-            // 
-            // packageControl
-            // 
-            this.packageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.packageControl.Location = new System.Drawing.Point(0, 0);
-            this.packageControl.Name = "packageControl";
-            this.packageControl.Size = new System.Drawing.Size(536, 436);
-            this.packageControl.TabIndex = 0;
             // 
             // splitContainer2
             // 
@@ -320,7 +303,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -335,9 +318,26 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            // 
+            // packageShortControl1
+            // 
+            this.packageShortControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packageShortControl1.Location = new System.Drawing.Point(3, 3);
+            this.packageShortControl1.MinimumSize = new System.Drawing.Size(500, 100);
+            this.packageShortControl1.Name = "packageShortControl1";
+            this.packageShortControl1.Size = new System.Drawing.Size(500, 100);
+            this.packageShortControl1.TabIndex = 0;
+            // 
+            // packageControl
+            // 
+            this.packageControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packageControl.Location = new System.Drawing.Point(0, 0);
+            this.packageControl.Name = "packageControl";
+            this.packageControl.Size = new System.Drawing.Size(536, 436);
+            this.packageControl.TabIndex = 0;
             // 
             // Form1
             // 
