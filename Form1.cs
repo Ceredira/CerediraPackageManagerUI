@@ -56,10 +56,20 @@ namespace CerediraPackageManagerUI
 
             installedPackageList.Controls.Clear();
 
-            foreach (var item in this.localPackages)
+            // Если папки install не существует или она пуста, отобразить плашку об отсутствии установленных пакетов
+            if (localPackages.Count.Equals(0))
             {
-                PackageShortControl psc = new PackageShortControl(this, item);
-                installedPackageList.Controls.Add(psc);
+                LocalEmptyPackages lep = new LocalEmptyPackages();
+                installedPackageList.Controls.Add(lep);
+            }
+            // Во всех остальных случаях отобразить пакеты из папки install
+            else
+            {
+                foreach (var item in this.localPackages)
+                {
+                    PackageShortControl psc = new PackageShortControl(this, item);
+                    installedPackageList.Controls.Add(psc);
+                }
             }
         }
 

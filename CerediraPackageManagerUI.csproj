@@ -84,6 +84,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalEmptyPackages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocalEmptyPackages.Designer.cs">
+      <DependentUpon>LocalEmptyPackages.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalPackageManager.cs" />
     <Compile Include="PackageControl.cs">
       <SubType>UserControl</SubType>
@@ -107,6 +113,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalEmptyPackages.resx">
+      <DependentUpon>LocalEmptyPackages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PackageControl.resx">
       <DependentUpon>PackageControl.cs</DependentUpon>
