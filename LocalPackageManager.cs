@@ -25,11 +25,13 @@ namespace CerediraPackageManagerUI
             }
             catch (DirectoryNotFoundException)
             {
-                throw new Exception($"Каталог '{directoryPath}' не существует.");
+                //throw new Exception($"Каталог '{directoryPath}' не существует.");
+                return new string[0];
             }
             catch (UnauthorizedAccessException)
             {
-                throw new Exception($"Нет доступа к каталогу '{directoryPath}'.");
+                //throw new Exception($"Нет доступа к каталогу '{directoryPath}'.");
+                return new string[0];
             }
         }
 
