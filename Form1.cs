@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CerediraPackageManagerUI
@@ -30,7 +31,14 @@ namespace CerediraPackageManagerUI
             ScanLocalPackages();
 
             // Отобразить подробную инфомарцию по первому доступному пакету
-            ShowPackage(localPackages[0]);
+            if (localPackages.Count > 0) // Если папка install существует и не пуста, то показать список программ в ней.
+            {
+                ShowPackage(localPackages.First());
+            }
+            else // Во всех остальных случаях сделать правую часть неактивной и скрыть надписи
+            {
+                HidePackage();
+            }
         }
 
         private void Form1_Load(object sender, System.EventArgs e)
@@ -45,6 +53,14 @@ namespace CerediraPackageManagerUI
         public void ShowPackage(PackageInfo packageInfo)
         {
             packageControl.ShowPackageInfo(this, packageInfo);
+        }
+
+        /// <summary>
+        /// Метод отключающий все активные вкладки и кнопки, скрывающий текст
+        /// </summary>
+        public void HidePackage()
+        {
+            packageControl.HidePackageInfo(this);
         }
 
         /// <summary>
