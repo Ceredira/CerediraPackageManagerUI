@@ -54,6 +54,24 @@ namespace CerediraPackageManagerUI
             packageFiles.Text = packageInfo.PackageFiles;
         }
 
+        public void HidePackageInfo(Form1 form1)
+        {
+            this.mainForm = form1;
+
+            packageChangelog.Visible = false;
+            packageName.Visible = false;
+            packageDescription.Visible = false;
+            packageAuthor.Visible = false;
+            packageWebsite.Visible = false;
+
+            installPackage.Enabled = false;
+            deletePackage.Enabled = false;
+            packageIcon.Visible = false;
+
+            splitContainer1.Enabled = false;
+            packageDescriptionTab.BackColor = System.Drawing.Color.Transparent;
+        }
+
         private void deletePackage_Click(object sender, System.EventArgs e)
         {
             foreach (var item in  packageInfo.PackageFiles.Split('\n').Reverse())
