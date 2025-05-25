@@ -29,8 +29,15 @@ namespace CerediraPackageManagerUI
             // Проверить наличие установленных пакетов
             ScanLocalPackages();
 
-            // Отобразить подробную инфомарцию по первому доступному пакету
-            ShowPackage(localPackages[0]);
+            if (localPackages.Count > 0) {
+                packageControl.Visible = true;
+                // Отобразить подробную инфомарцию по первому доступному пакету
+                ShowPackage(localPackages[0]);
+            }
+            else
+            {
+                packageControl.Visible = false;
+            }
         }
 
         private void Form1_Load(object sender, System.EventArgs e)

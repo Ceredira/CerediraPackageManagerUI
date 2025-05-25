@@ -106,13 +106,13 @@
             this.deletePackage.BackColor = System.Drawing.SystemColors.Control;
             this.deletePackage.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.deletePackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deletePackage.Location = new System.Drawing.Point(121, 150);
+            this.deletePackage.Location = new System.Drawing.Point(264, 150);
             this.deletePackage.Name = "deletePackage";
-            this.deletePackage.Size = new System.Drawing.Size(100, 35);
+            this.deletePackage.Size = new System.Drawing.Size(220, 35);
             this.deletePackage.TabIndex = 10;
-            this.deletePackage.Text = "Удалить";
+            this.deletePackage.Text = "Удалить пакет";
             this.deletePackage.UseVisualStyleBackColor = false;
-            this.deletePackage.Click += new System.EventHandler(this.deletePackage_Click);
+            this.deletePackage.Click += new System.EventHandler(this.DeletePackage_Click);
             // 
             // installPackage
             // 
@@ -121,9 +121,9 @@
             this.installPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.installPackage.Location = new System.Drawing.Point(15, 150);
             this.installPackage.Name = "installPackage";
-            this.installPackage.Size = new System.Drawing.Size(100, 35);
+            this.installPackage.Size = new System.Drawing.Size(220, 35);
             this.installPackage.TabIndex = 9;
-            this.installPackage.Text = "Установить";
+            this.installPackage.Text = "Установить пакет";
             this.installPackage.UseVisualStyleBackColor = false;
             // 
             // packageTags
@@ -200,6 +200,7 @@
             // 
             // packageDescription
             // 
+            this.packageDescription.BackColor = System.Drawing.Color.White;
             this.packageDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.packageDescription.Location = new System.Drawing.Point(3, 3);
             this.packageDescription.Name = "packageDescription";
@@ -221,6 +222,7 @@
             // 
             // packageChangelog
             // 
+            this.packageChangelog.BackColor = System.Drawing.Color.White;
             this.packageChangelog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.packageChangelog.Location = new System.Drawing.Point(3, 3);
             this.packageChangelog.Name = "packageChangelog";
@@ -241,6 +243,8 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -260,7 +264,7 @@
             this.tableLayoutPanel1.Controls.Add(this.infoPackageVersionLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.infoPackageName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.infoPackageNameLabel, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
@@ -273,7 +277,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 267);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(492, 207);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // infoPackageSize
@@ -281,10 +285,10 @@
             this.infoPackageSize.AutoSize = true;
             this.infoPackageSize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageSize.Location = new System.Drawing.Point(152, 208);
+            this.infoPackageSize.Location = new System.Drawing.Point(152, 166);
             this.infoPackageSize.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageSize.Name = "infoPackageSize";
-            this.infoPackageSize.Size = new System.Drawing.Size(335, 19);
+            this.infoPackageSize.Size = new System.Drawing.Size(335, 13);
             this.infoPackageSize.TabIndex = 15;
             this.infoPackageSize.Text = "Размер архива значение";
             // 
@@ -293,10 +297,10 @@
             this.infoPackageSizeLabel.AutoSize = true;
             this.infoPackageSizeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageSizeLabel.Location = new System.Drawing.Point(5, 208);
+            this.infoPackageSizeLabel.Location = new System.Drawing.Point(5, 166);
             this.infoPackageSizeLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageSizeLabel.Name = "infoPackageSizeLabel";
-            this.infoPackageSizeLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoPackageSizeLabel.Size = new System.Drawing.Size(137, 13);
             this.infoPackageSizeLabel.TabIndex = 14;
             this.infoPackageSizeLabel.Text = "Размер архива";
             // 
@@ -305,10 +309,10 @@
             this.infoPackageSourceSize.AutoSize = true;
             this.infoPackageSourceSize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageSourceSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageSourceSize.Location = new System.Drawing.Point(152, 179);
+            this.infoPackageSourceSize.Location = new System.Drawing.Point(152, 143);
             this.infoPackageSourceSize.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageSourceSize.Name = "infoPackageSourceSize";
-            this.infoPackageSourceSize.Size = new System.Drawing.Size(335, 19);
+            this.infoPackageSourceSize.Size = new System.Drawing.Size(335, 13);
             this.infoPackageSourceSize.TabIndex = 13;
             this.infoPackageSourceSize.Text = "Размер распаковки значение";
             // 
@@ -317,10 +321,10 @@
             this.infoPackageSourceSizeLabel.AutoSize = true;
             this.infoPackageSourceSizeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageSourceSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageSourceSizeLabel.Location = new System.Drawing.Point(5, 179);
+            this.infoPackageSourceSizeLabel.Location = new System.Drawing.Point(5, 143);
             this.infoPackageSourceSizeLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageSourceSizeLabel.Name = "infoPackageSourceSizeLabel";
-            this.infoPackageSourceSizeLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoPackageSourceSizeLabel.Size = new System.Drawing.Size(137, 13);
             this.infoPackageSourceSizeLabel.TabIndex = 12;
             this.infoPackageSourceSizeLabel.Text = "Размер распаковки";
             // 
@@ -329,10 +333,10 @@
             this.infoOriginalPackageName.AutoSize = true;
             this.infoOriginalPackageName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoOriginalPackageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoOriginalPackageName.Location = new System.Drawing.Point(152, 150);
+            this.infoOriginalPackageName.Location = new System.Drawing.Point(152, 120);
             this.infoOriginalPackageName.Margin = new System.Windows.Forms.Padding(5);
             this.infoOriginalPackageName.Name = "infoOriginalPackageName";
-            this.infoOriginalPackageName.Size = new System.Drawing.Size(335, 19);
+            this.infoOriginalPackageName.Size = new System.Drawing.Size(335, 13);
             this.infoOriginalPackageName.TabIndex = 11;
             this.infoOriginalPackageName.Text = "Исходное имя пакета значение";
             // 
@@ -341,10 +345,10 @@
             this.infoOriginalPackageNameLabel.AutoSize = true;
             this.infoOriginalPackageNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoOriginalPackageNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoOriginalPackageNameLabel.Location = new System.Drawing.Point(5, 150);
+            this.infoOriginalPackageNameLabel.Location = new System.Drawing.Point(5, 120);
             this.infoOriginalPackageNameLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoOriginalPackageNameLabel.Name = "infoOriginalPackageNameLabel";
-            this.infoOriginalPackageNameLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoOriginalPackageNameLabel.Size = new System.Drawing.Size(137, 13);
             this.infoOriginalPackageNameLabel.TabIndex = 10;
             this.infoOriginalPackageNameLabel.Text = "Исходное имя пакета";
             // 
@@ -353,10 +357,10 @@
             this.infoDownloadPath.AutoSize = true;
             this.infoDownloadPath.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoDownloadPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoDownloadPath.Location = new System.Drawing.Point(152, 121);
+            this.infoDownloadPath.Location = new System.Drawing.Point(152, 97);
             this.infoDownloadPath.Margin = new System.Windows.Forms.Padding(5);
             this.infoDownloadPath.Name = "infoDownloadPath";
-            this.infoDownloadPath.Size = new System.Drawing.Size(335, 19);
+            this.infoDownloadPath.Size = new System.Drawing.Size(335, 13);
             this.infoDownloadPath.TabIndex = 9;
             this.infoDownloadPath.Text = "Адрес скачивания значение";
             // 
@@ -365,10 +369,10 @@
             this.infoDownloadPathLabel.AutoSize = true;
             this.infoDownloadPathLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoDownloadPathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoDownloadPathLabel.Location = new System.Drawing.Point(5, 121);
+            this.infoDownloadPathLabel.Location = new System.Drawing.Point(5, 97);
             this.infoDownloadPathLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoDownloadPathLabel.Name = "infoDownloadPathLabel";
-            this.infoDownloadPathLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoDownloadPathLabel.Size = new System.Drawing.Size(137, 13);
             this.infoDownloadPathLabel.TabIndex = 8;
             this.infoDownloadPathLabel.Text = "Адрес скачивания";
             // 
@@ -377,10 +381,10 @@
             this.infoWebsite.AutoSize = true;
             this.infoWebsite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoWebsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoWebsite.Location = new System.Drawing.Point(152, 92);
+            this.infoWebsite.Location = new System.Drawing.Point(152, 74);
             this.infoWebsite.Margin = new System.Windows.Forms.Padding(5);
             this.infoWebsite.Name = "infoWebsite";
-            this.infoWebsite.Size = new System.Drawing.Size(335, 19);
+            this.infoWebsite.Size = new System.Drawing.Size(335, 13);
             this.infoWebsite.TabIndex = 7;
             this.infoWebsite.Text = "Веб-сайт значение";
             // 
@@ -389,10 +393,10 @@
             this.infoWebsiteLabel.AutoSize = true;
             this.infoWebsiteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoWebsiteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoWebsiteLabel.Location = new System.Drawing.Point(5, 92);
+            this.infoWebsiteLabel.Location = new System.Drawing.Point(5, 74);
             this.infoWebsiteLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoWebsiteLabel.Name = "infoWebsiteLabel";
-            this.infoWebsiteLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoWebsiteLabel.Size = new System.Drawing.Size(137, 13);
             this.infoWebsiteLabel.TabIndex = 6;
             this.infoWebsiteLabel.Text = "Веб-сайт";
             // 
@@ -401,10 +405,10 @@
             this.infoPackageAuthor.AutoSize = true;
             this.infoPackageAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageAuthor.Location = new System.Drawing.Point(152, 63);
+            this.infoPackageAuthor.Location = new System.Drawing.Point(152, 51);
             this.infoPackageAuthor.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageAuthor.Name = "infoPackageAuthor";
-            this.infoPackageAuthor.Size = new System.Drawing.Size(335, 19);
+            this.infoPackageAuthor.Size = new System.Drawing.Size(335, 13);
             this.infoPackageAuthor.TabIndex = 5;
             this.infoPackageAuthor.Text = "Автор пакета значение";
             // 
@@ -413,10 +417,10 @@
             this.infoPackageAuthorLabel.AutoSize = true;
             this.infoPackageAuthorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageAuthorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageAuthorLabel.Location = new System.Drawing.Point(5, 63);
+            this.infoPackageAuthorLabel.Location = new System.Drawing.Point(5, 51);
             this.infoPackageAuthorLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageAuthorLabel.Name = "infoPackageAuthorLabel";
-            this.infoPackageAuthorLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoPackageAuthorLabel.Size = new System.Drawing.Size(137, 13);
             this.infoPackageAuthorLabel.TabIndex = 4;
             this.infoPackageAuthorLabel.Text = "Автор пакета";
             // 
@@ -425,10 +429,10 @@
             this.infoPackageVersion.AutoSize = true;
             this.infoPackageVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageVersion.Location = new System.Drawing.Point(152, 34);
+            this.infoPackageVersion.Location = new System.Drawing.Point(152, 28);
             this.infoPackageVersion.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageVersion.Name = "infoPackageVersion";
-            this.infoPackageVersion.Size = new System.Drawing.Size(335, 19);
+            this.infoPackageVersion.Size = new System.Drawing.Size(335, 13);
             this.infoPackageVersion.TabIndex = 3;
             this.infoPackageVersion.Text = "Версия пакета значение";
             // 
@@ -437,10 +441,10 @@
             this.infoPackageVersionLabel.AutoSize = true;
             this.infoPackageVersionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoPackageVersionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infoPackageVersionLabel.Location = new System.Drawing.Point(5, 34);
+            this.infoPackageVersionLabel.Location = new System.Drawing.Point(5, 28);
             this.infoPackageVersionLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageVersionLabel.Name = "infoPackageVersionLabel";
-            this.infoPackageVersionLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoPackageVersionLabel.Size = new System.Drawing.Size(137, 13);
             this.infoPackageVersionLabel.TabIndex = 2;
             this.infoPackageVersionLabel.Text = "Версия пакета";
             // 
@@ -452,7 +456,7 @@
             this.infoPackageName.Location = new System.Drawing.Point(152, 5);
             this.infoPackageName.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageName.Name = "infoPackageName";
-            this.infoPackageName.Size = new System.Drawing.Size(335, 19);
+            this.infoPackageName.Size = new System.Drawing.Size(335, 13);
             this.infoPackageName.TabIndex = 1;
             this.infoPackageName.Text = "Имя пакета значение";
             // 
@@ -464,7 +468,7 @@
             this.infoPackageNameLabel.Location = new System.Drawing.Point(5, 5);
             this.infoPackageNameLabel.Margin = new System.Windows.Forms.Padding(5);
             this.infoPackageNameLabel.Name = "infoPackageNameLabel";
-            this.infoPackageNameLabel.Size = new System.Drawing.Size(137, 19);
+            this.infoPackageNameLabel.Size = new System.Drawing.Size(137, 13);
             this.infoPackageNameLabel.TabIndex = 0;
             this.infoPackageNameLabel.Text = "Имя пакета";
             // 
@@ -480,6 +484,7 @@
             // 
             // packageFiles
             // 
+            this.packageFiles.BackColor = System.Drawing.Color.White;
             this.packageFiles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.packageFiles.Location = new System.Drawing.Point(0, 0);
             this.packageFiles.Name = "packageFiles";
@@ -514,6 +519,7 @@
             this.packageDescriptionTab.ResumeLayout(false);
             this.packageChangelogTab.ResumeLayout(false);
             this.packageAdditionalInfoTab.ResumeLayout(false);
+            this.packageAdditionalInfoTab.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.packageFilesTab.ResumeLayout(false);

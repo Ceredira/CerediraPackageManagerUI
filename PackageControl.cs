@@ -33,13 +33,13 @@ namespace CerediraPackageManagerUI
             {
                 installPackage.Enabled = false;
                 deletePackage.Enabled = true;
-                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.product_package_delivered_icon;
+                packageIcon.Image = Properties.Resources.product_package_delivered_icon;
             }
             else
             {
                 installPackage.Enabled = true;
                 deletePackage.Enabled = false;
-                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.box_package_icon;
+                packageIcon.Image = Properties.Resources.box_package_icon;
             }
 
             infoPackageName.Text = packageInfo.Name;
@@ -54,7 +54,7 @@ namespace CerediraPackageManagerUI
             packageFiles.Text = packageInfo.PackageFiles;
         }
 
-        private void deletePackage_Click(object sender, System.EventArgs e)
+        private void DeletePackage_Click(object sender, System.EventArgs e)
         {
             foreach (var item in  packageInfo.PackageFiles.Split('\n').Reverse())
             {

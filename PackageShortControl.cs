@@ -30,15 +30,15 @@ namespace CerediraPackageManagerUI
 
             if (packageInfo.Installed == true)
             {
-                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.product_package_delivered_icon;
+                packageIcon.Image = Properties.Resources.product_package_delivered_icon;
             }
             else
             {
-                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.box_package_icon;
+                packageIcon.Image = Properties.Resources.box_package_icon;
             }
         }
 
-        private void packageName_Click(object sender, EventArgs e)
+        private void PackageName_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowPackage(this.packageInfo);
         }
@@ -48,17 +48,17 @@ namespace CerediraPackageManagerUI
 
         }
 
-        private void packageDescription_Click(object sender, EventArgs e)
+        private void PackageDescription_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowPackage(this.packageInfo);
         }
 
-        private void packageIcon_Click(object sender, EventArgs e)
+        private void PackageIcon_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowPackage(this.packageInfo);
         }
 
-        private void tableLayoutPanel1_Click(object sender, EventArgs e)
+        private void TableLayoutPanel1_Click(object sender, EventArgs e)
         {
             this.mainForm.ShowPackage(this.packageInfo);
         }

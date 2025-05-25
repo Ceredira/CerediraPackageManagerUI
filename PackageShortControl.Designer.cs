@@ -46,7 +46,7 @@
             this.packageName.Size = new System.Drawing.Size(383, 20);
             this.packageName.TabIndex = 1;
             this.packageName.Text = "packageName packageVersion";
-            this.packageName.Click += new System.EventHandler(this.packageName_Click);
+            this.packageName.Click += new System.EventHandler(this.PackageName_Click);
             // 
             // packageDescription
             // 
@@ -58,7 +58,7 @@
             this.packageDescription.Size = new System.Drawing.Size(383, 60);
             this.packageDescription.TabIndex = 2;
             this.packageDescription.Text = "packageDescription";
-            this.packageDescription.Click += new System.EventHandler(this.packageDescription_Click);
+            this.packageDescription.Click += new System.EventHandler(this.PackageDescription_Click);
             // 
             // packageIcon
             // 
@@ -73,7 +73,7 @@
             this.packageIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.packageIcon.TabIndex = 3;
             this.packageIcon.TabStop = false;
-            this.packageIcon.Click += new System.EventHandler(this.packageIcon_Click);
+            this.packageIcon.Click += new System.EventHandler(this.PackageIcon_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(500, 100);
             this.tableLayoutPanel1.TabIndex = 4;
-            this.tableLayoutPanel1.Click += new System.EventHandler(this.tableLayoutPanel1_Click);
+            this.tableLayoutPanel1.Click += new System.EventHandler(this.TableLayoutPanel1_Click);
             // 
             // PackageShortControl
             // 
