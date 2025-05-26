@@ -33,7 +33,7 @@ namespace CerediraPackageManagerUI
 
                 // Путь к пакету - это имя + версия, поэтому чтобы попасть в каталог, можно заменить / на -
                 // и получить имя файла с расширением .cmpd.
-                string packageUrl = remoteRepositoryUrl + $"/{itemTrimmed}/{itemTrimmed.Replace('/', '-')}.cpmd";
+                string packageUrl = remoteRepositoryUrl + "/{itemTrimmed}/{itemTrimmed.Replace('/', '-')}.cpmd";
 
                 // Получить содержимое в виде json
                 // Пример содержимого
