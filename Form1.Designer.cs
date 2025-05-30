@@ -50,7 +50,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.referenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AboutTheProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutTheProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -211,7 +211,7 @@
             this.updateRemotePackages.TabIndex = 2;
             this.updateRemotePackages.Text = "Обновить";
             this.updateRemotePackages.UseVisualStyleBackColor = true;
-            this.updateRemotePackages.Click += new System.EventHandler(this.updateRemotePackages_Click);
+            this.updateRemotePackages.Click += new System.EventHandler(this.UpdateRemotePackages_Click);
             // 
             // availablePackageList
             // 
@@ -275,7 +275,7 @@
             this.updateLocalPackages.TabIndex = 0;
             this.updateLocalPackages.Text = "Обновить";
             this.updateLocalPackages.UseVisualStyleBackColor = true;
-            this.updateLocalPackages.Click += new System.EventHandler(this.updateLocalPackages_Click);
+            this.updateLocalPackages.Click += new System.EventHandler(this.UpdateLocalPackages_Click);
             // 
             // label1
             // 
@@ -310,7 +310,7 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // файлToolStripMenuItem
+            // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
@@ -318,27 +318,27 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.fileToolStripMenuItem.Text = "Файл";
             // 
-            // выходToolStripMenuItem
+            // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.exitToolStripMenuItem.Text = "Выход";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
-            // справкаToolStripMenuItem
+            // referenceToolStripMenuItem
             // 
             this.referenceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutTheProgramToolStripMenuItem});
+            this.aboutTheProgramToolStripMenuItem});
             this.referenceToolStripMenuItem.Name = "referenceToolStripMenuItem";
             this.referenceToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.referenceToolStripMenuItem.Text = "Справка";
             // 
-            // оПрограммеToolStripMenuItem
+            // aboutTheProgramToolStripMenuItem
             // 
-            this.AboutTheProgramToolStripMenuItem.Name = "AboutTheProgramToolStripMenuItem";
-            this.AboutTheProgramToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.AboutTheProgramToolStripMenuItem.Text = "О программе";
-            this.AboutTheProgramToolStripMenuItem.Click += new System.EventHandler(this.AboutTheProgramToolStripMenuItem_Click);
+            this.aboutTheProgramToolStripMenuItem.Name = "aboutTheProgramToolStripMenuItem";
+            this.aboutTheProgramToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.aboutTheProgramToolStripMenuItem.Text = "О программе";
+            this.aboutTheProgramToolStripMenuItem.Click += new System.EventHandler(this.AboutTheProgramToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -403,7 +403,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem referenceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem AboutTheProgramToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutTheProgramToolStripMenuItem;
     }
 }
 

@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace CerediraPackageManagerUI
 {
@@ -29,14 +31,12 @@ namespace CerediraPackageManagerUI
             // Проверить наличие установленных пакетов
             ScanLocalPackages();
 
-            if (localPackages.Count > 0) {
-                packageControl.Visible = true;
+            packageControl.Visible = false;
+
+            if (localPackages.Count > 0)
+            {
                 // Отобразить подробную инфомарцию по первому доступному пакету
                 ShowPackage(localPackages[0]);
-            }
-            else
-            {
-                packageControl.Visible = false;
             }
         }
 
@@ -51,6 +51,7 @@ namespace CerediraPackageManagerUI
         /// <param name="packageInfo">Пакет</param>
         public void ShowPackage(PackageInfo packageInfo)
         {
+            packageControl.Visible = true;
             packageControl.ShowPackageInfo(this, packageInfo);
         }
 
@@ -101,7 +102,7 @@ namespace CerediraPackageManagerUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void updateLocalPackages_Click(object sender, System.EventArgs e)
+        private void UpdateLocalPackages_Click(object sender, System.EventArgs e)
         {
             ScanLocalPackages();
         }
@@ -111,12 +112,12 @@ namespace CerediraPackageManagerUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void updateRemotePackages_Click(object sender, System.EventArgs e)
+        private void UpdateRemotePackages_Click(object sender, System.EventArgs e)
         {
             ScanRemotePackages();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             Close();
         }
