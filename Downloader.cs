@@ -43,13 +43,13 @@ namespace CerediraPackageManagerUI
                     }
                     else
                     {
-                        throw new Exception("Ошибка скачивания файла: {response.StatusCode}");
+                        throw new Exception($"Ошибка скачивания файла: {response.StatusCode}");
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Ошибка скачивания файла: {ex.Message}");
+                throw new Exception($"Ошибка скачивания файла: {ex.Message}");
             }
         }
 
@@ -81,13 +81,13 @@ namespace CerediraPackageManagerUI
                     }
                     else
                     {
-                        throw new Exception("Ошибка получения данных по ссылке {url}. Статус код: {response.StatusCode}");
+                        throw new Exception($"Ошибка получения данных по ссылке {url}. Статус код: {response.StatusCode}");
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Ошибка получения данных по ссылке {url}: {ex.Message}");
+                throw new Exception($"Ошибка получения данных по ссылке {url}: {ex.Message}");
             }
         }
     }
