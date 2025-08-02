@@ -129,5 +129,26 @@ namespace CerediraPackageManagerUI
                 box.ShowDialog(this);
             }
         }
+
+        /// <summary>
+        /// Метод будет выделять только один элемент в списке, а все остальные сбрасывать
+        /// </summary>
+        /// <param name="selectedControl"></param>
+        public void HighlightOnly(PackageShortControl selectedControl)
+        {
+            Control.ControlCollection panelControls = installedPackageList.Controls.Contains(selectedControl)
+                ? installedPackageList.Controls
+                : availablePackageList.Controls;
+
+            foreach (Control ctrl in panelControls)
+            {
+                if (ctrl is PackageShortControl psc)
+                {
+                    psc.IsSelected = false;
+                }
+            }
+
+            selectedControl.IsSelected = true;
+        }
     }
 }
