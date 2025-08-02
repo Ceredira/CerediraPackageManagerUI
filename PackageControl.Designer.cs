@@ -112,7 +112,7 @@
             this.deletePackage.TabIndex = 10;
             this.deletePackage.Text = "Удалить пакет";
             this.deletePackage.UseVisualStyleBackColor = false;
-            this.deletePackage.Click += new System.EventHandler(this.DeletePackage_Click);
+            this.deletePackage.Click += new System.EventHandler(this.deletePackage_Click);
             // 
             // installPackage
             // 
