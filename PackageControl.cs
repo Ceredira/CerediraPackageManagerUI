@@ -33,13 +33,13 @@ namespace CerediraPackageManagerUI
             {
                 installPackage.Enabled = false;
                 deletePackage.Enabled = true;
-                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.product_package_delivered_icon;
+                packageIcon.Image = Properties.Resources.product_package_delivered_icon;
             }
             else
             {
                 installPackage.Enabled = true;
                 deletePackage.Enabled = false;
-                packageIcon.Image = global::CerediraPackageManagerUI.Properties.Resources.box_package_icon;
+                packageIcon.Image = Properties.Resources.box_package_icon;
             }
 
             infoPackageName.Text = packageInfo.Name;

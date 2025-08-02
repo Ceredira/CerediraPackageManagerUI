@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace CerediraPackageManagerUI
 {
@@ -52,6 +54,7 @@ namespace CerediraPackageManagerUI
         /// <param name="packageInfo">Пакет</param>
         public void ShowPackage(PackageInfo packageInfo)
         {
+            packageControl.Visible = true;
             packageControl.ShowPackageInfo(this, packageInfo);
         }
 
@@ -110,7 +113,7 @@ namespace CerediraPackageManagerUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void updateLocalPackages_Click(object sender, System.EventArgs e)
+        private void UpdateLocalPackages_Click(object sender, System.EventArgs e)
         {
             ScanLocalPackages();
         }
@@ -120,17 +123,17 @@ namespace CerediraPackageManagerUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void updateRemotePackages_Click(object sender, System.EventArgs e)
+        private void UpdateRemotePackages_Click(object sender, System.EventArgs e)
         {
             ScanRemotePackages();
         }
 
-        private void выходToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             Close();
         }
 
-        private void оПрограммеToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void AboutTheProgramToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             using (AboutBox1 box = new AboutBox1())
             {
