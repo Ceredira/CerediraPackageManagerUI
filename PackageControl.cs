@@ -54,7 +54,7 @@ namespace CerediraPackageManagerUI
             packageFiles.Text = packageInfo.PackageFiles;
         }
 
-        private void DeletePackage_Click(object sender, System.EventArgs e)
+        private void deletePackage_Click(object sender, System.EventArgs e)
         {
             foreach (var item in  packageInfo.PackageFiles.Split('\n').Reverse())
             {

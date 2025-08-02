@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace CerediraPackageManagerUI
 {
@@ -29,14 +27,16 @@ namespace CerediraPackageManagerUI
             rootPath.Text = Directory.GetCurrentDirectory();
 
             // Проверить наличие установленных пакетов
-            ScanLocalPackages();
+            var scanLocalPackages = ScanLocalPackages();
 
-            packageControl.Visible = false;
-
-            if (localPackages.Count > 0)
+            // Отобразить подробную инфомарцию по первому доступному пакету
+            if (scanLocalPackages) // Если папка install существует и не пуста, то показать список программ в ней.
             {
-                // Отобразить подробную инфомарцию по первому доступному пакету
                 ShowPackage(localPackages[0]);
+            }
+            else // Во всех остальных случаях сделать правую часть неактивной и скрыть надписи
+            {
+                HidePackage();
             }
         }
 
@@ -56,10 +56,19 @@ namespace CerediraPackageManagerUI
         }
 
         /// <summary>
+        /// Метод отключающий все активные вкладки и кнопки, скрывающий текст
+        /// </summary>
+        public void HidePackage()
+        {
+            packageControl.Visible = false;
+        }
+
+        /// <summary>
         /// Метод для загрузки установленных пакетов
         /// </summary>
-        public void ScanLocalPackages()
+        public bool ScanLocalPackages()
         {
+            var localPackagesExist = false;
             this.localPackages = LocalPackageManager.GetPackages();
 
             installedPackageList.Controls.Clear();
@@ -73,12 +82,15 @@ namespace CerediraPackageManagerUI
             // Во всех остальных случаях отобразить пакеты из папки install
             else
             {
-                foreach (var item in this.localPackages)
+                foreach (PackageInfo item in this.localPackages)
                 {
                     PackageShortControl psc = new PackageShortControl(this, item);
                     installedPackageList.Controls.Add(psc);
                 }
+                localPackagesExist = true;
             }
+
+            return localPackagesExist;
         }
 
         /// <summary>
@@ -104,7 +116,12 @@ namespace CerediraPackageManagerUI
         /// <param name="e"></param>
         private void UpdateLocalPackages_Click(object sender, System.EventArgs e)
         {
-            ScanLocalPackages();
+            var scanLocalPackages = ScanLocalPackages();
+            
+            if (!scanLocalPackages)
+            {
+                HidePackage();
+            }
         }
 
         /// <summary>
